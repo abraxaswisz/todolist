@@ -9,7 +9,9 @@ class LoginProvider extends Component {
   };
   render() {
     return (
-      <LoginContext value="i am the value">{this.props.children}</LoginContext>
+      <LoginContext.Provider value="i am the value">
+        {this.props.children}
+      </LoginContext.Provider>
     );
   }
 }

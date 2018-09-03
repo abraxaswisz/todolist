@@ -76,7 +76,7 @@ const Header = () => {
   return (
     <React.Fragment>
       <LoginContext.Consumer>
-        {context => console.log(context)}
+        {context => console.log(context.state)}
       </LoginContext.Consumer>
       <StyledHeader>
         <StyledH1>

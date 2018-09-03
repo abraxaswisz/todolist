@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-const LoginContext = React.createContext();
+export const LoginContext = React.createContext();
 
 class LoginProvider extends Component {
   state = {

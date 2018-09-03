@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { Button } from "./Elements/Button";
+import { LoginContext } from "./LoginProvider";
 
 const StyledHeader = styled.header`
   position: absolute;
@@ -74,6 +75,9 @@ const Letters = styled.span`
 const Header = () => {
   return (
     <React.Fragment>
+      <LoginContext.Consumer>
+        {context => console.log(context)}
+      </LoginContext.Consumer>
       <StyledHeader>
         <StyledH1>
           To Do <span id="list">List</span>

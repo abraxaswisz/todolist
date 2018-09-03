@@ -6,21 +6,24 @@ import Dashboard from "./Dashboard";
 import Login from "./Login";
 import Register from "./Register";
 import Navigation from "./Navigation";
+import LoginProvider from "./LoginProvider";
 class Router extends Component {
   render() {
     return (
-      <HashRouter>
-        <React.Fragment>
-          <Navigation />
-          <Switch>
-            <Route exact path="/" component={App} />
-            <Route exact path="/login" component={Login} />
-            <Route exact path="/dashboard" component={Dashboard} />
-            <Route exact path="/register" component={Register} />
-            <Route component={NotFound} />
-          </Switch>
-        </React.Fragment>
-      </HashRouter>
+      <LoginProvider>
+        <HashRouter>
+          <React.Fragment>
+            <Navigation />
+            <Switch>
+              <Route exact path="/" component={App} />
+              <Route exact path="/login" component={Login} />
+              <Route exact path="/dashboard" component={Dashboard} />
+              <Route exact path="/register" component={Register} />
+              <Route component={NotFound} />
+            </Switch>
+          </React.Fragment>
+        </HashRouter>
+      </LoginProvider>
     );
   }
 }

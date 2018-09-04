@@ -5,6 +5,7 @@ import { Form, Label, StyledInput } from "./Elements/Forms";
 import { SubmitButton } from "./Elements/Button";
 import { CSSTransition } from "react-transition-group";
 import { injectGlobal } from "styled-components";
+import Dashboard from "./Dashboard";
 
 injectGlobal`
 .fade-appear {
@@ -57,6 +58,10 @@ class Login extends Component {
     });
   }
 
+  redirectToDashboard = () => {
+    return <Redirect to={Dashboard} />;
+  };
+
   loginMethod = e => {
     e.preventDefault();
     const email = this.userNameRef.current.value;
@@ -65,7 +70,7 @@ class Login extends Component {
     fireBaseApp
       .auth()
       .signInWithEmailAndPassword(email, password)
-      .then(() => this.setState({ logged: true }))
+      .then(this.redirectToDashboard)
       .catch(err => console.log(err));
   };
 

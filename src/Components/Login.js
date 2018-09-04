@@ -70,8 +70,8 @@ class Login extends Component {
     fireBaseApp
       .auth()
       .signInWithEmailAndPassword(email, password)
-      .then(this.redirectToDashboard)
-      .catch(err => console.log(err));
+      .then(() => this.redirectToDashboard)
+      .catch(err => alert(err.message));
   };
 
   render() {

@@ -58,8 +58,8 @@ class Login extends Component {
     });
   }
 
-  redirectToDashboard = () => {
-    return <Redirect to={Dashboard} />;
+  redirectToDashboard = async () => {
+    return <Dashboard />;
   };
 
   loginMethod = e => {

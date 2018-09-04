@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { fireBaseApp } from "../base";
-export const LoginContext = React.createContext();
+
+const LoginContext = React.createContext();
 
 class LoginProvider extends Component {
   state = {
@@ -43,7 +44,9 @@ class LoginProvider extends Component {
     return (
       <LoginContext.Provider
         value={{
-          state: this.state.loginState
+          state: this.state.loginState,
+          login: this.login,
+          logOut: this.logOut
         }}
       >
         {this.props.children}
@@ -53,3 +56,4 @@ class LoginProvider extends Component {
 }
 
 export default LoginProvider;
+export { LoginContext };
